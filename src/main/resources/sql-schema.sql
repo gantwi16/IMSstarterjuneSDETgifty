@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `ims`.`orders`(
 	`order_id` INT(11) NOT NULL AUTO_INCREMENT,
 	`order_name` VARCHAR(40) NOT NULL,
 	`order_status` VARCHAR(40) NOT NULL,
-    `date_placed` DATETIME(6) NOT NULL,
+    `date_placed` DATETIME NOT NULL,
 	`price` DECIMAL(4,2) NOT NULL,
 	PRIMARY KEY(`order_id`)
 );

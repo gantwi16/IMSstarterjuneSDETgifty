@@ -40,40 +40,40 @@ public class ItemController implements CrudController<Item>  {
 		@Override
 		public Item create() {
 			LOGGER.info("Please enter the name of the item");
-			String itemName = utils.getString();
+			String item_name = utils.getString();
 			LOGGER.info("Please enter the price of the item");
 			Float price = utils.getDouble().floatValue();
-			Item item = itemDAO.create(new Item(itemName, price));
+			Item item = itemDAO.create(new Item(item_name, price));
 			LOGGER.info("Item created");
 			return item;
 		}
 
 		/**
-		 * Updates an existing customer by taking in user input
+		 * Updates an existing item by taking in user input
 		 */
 		@Override
 		public Item update() {
 			LOGGER.info("Please enter the id of the item that you would like to update");
-			Long itemID = utils.getLong();
+			Long item_id = utils.getLong();
 			LOGGER.info("Please enter the name of the item that you would like to update");
-			String itemName = utils.getString();
+			String item_name = utils.getString();
 			LOGGER.info("Please enter the price of the item that you would like to update");
 			Float price = utils.getDouble().floatValue();
-			Item item = itemDAO.update(new Item(itemID, itemName, price));
+			Item item = itemDAO.update(new Item(item_id, item_name, price));
 			LOGGER.info("Item Updated");
 			return item;
 		}
 
 		/**
-		 * Deletes an existing customer by the id of the customer
+		 * Deletes an existing item by the id of the item
 		 * 
 		 * @return
 		 */
 		@Override
 		public int delete() {
 			LOGGER.info("Please enter the id of the item that you would like to delete");
-			Long itemID = utils.getLong();
-			return itemDAO.delete(itemID);
+			Long item_id = utils.getLong();
+			return itemDAO.delete(item_id);
 		}
 
 }
